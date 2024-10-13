@@ -10,17 +10,11 @@
 :: when executing from a pipe. Thanks cmd.exe!
 SET "TEMP_INSTALL_SCRIPT=%TEMP%\%RANDOM%-%RANDOM%.cmd"
 TIMEOUT /T 0 >NUL 2>NUL
-IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example -o %TEMP_INSTALL_SCRIPT% && START /I CMD /D /Q /K %TEMP_INSTALL_SCRIPT% && EXIT /B)
+IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example -o %TEMP_INSTALL_SCRIPT% && START /I CMD /D /Q /K %TEMP_INSTALL_SCRIPT% && DEL %TEMP_INSTALL_SCRIPT% && EXIT /B)
 
 ECHO I'm being executed as a batch file!
-GOTO cleanup
 
 :: All done! Let's exit from the Windows part of the script
-:cleanup
-:: Check if the script was  downloaded to temp. It most likely
-:: was as if we piped it from cURL, and if so it won't be
-:: named 'example' - it will be named something random.
-IF NOT "%~nx0" == "example" (DEL "%~f0" >NUL)
 EXIT /B
 END_WIN
 
