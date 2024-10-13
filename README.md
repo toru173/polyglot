@@ -7,13 +7,13 @@ Polyglot is a script format that is simultaneously a valid Batch (.BAT, .CMD) fi
 In computing, a polyglot is a program or script that is valid in multiple programming languages. [Wikipedia](https://en.wikipedia.org/wiki/Polyglot_(computing)) has a good introduction to the concept.
 
 ### Running a polygot script in Windows...
-![Running on Windows](https://www.github.com/toru173/polyglot/images/windows.png)
+![Running on Windows](images/windows.png)
 
 ### Linux...
-![Running on Linux](https://www.github.com/toru173/polyglot/images/linux.png)
+![Running on Linux](images/linux.png)
 
 ### And in macOS!
-![Running on macOS](https://www.github.com/toru173/polyglot/images/macos.png)
+![Running on macOS](images/macos.png)
 
 ## How does it work?
 We can combine the two because a line starting with `:; ...(other commands)` is treated as a single line by cmd.exe, but as multiple lines in a shell script. That means we can put in additional commands specific to bash, such as a command that captures all of the contents of the script up to a delimiter keyword - representing the Batch component of the script - and redirecting it to /dev/null. Execution then proceeds as expected in our chosen *nix shell.
@@ -70,7 +70,7 @@ curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/exam
 
 You can quickly copy example code from GitHub by clicking the clipboard icon to the right of the code:
 
-![GitHub Clipboard Icon](https://www.github.com/toru173/polyglot/images/clipboard_icon.png)
+![GitHub Clipboard Icon](images/clipboard_icon.png)
 
 Please quickly read through the [example script](https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example) before downloading as it's never a good idea to blindly download and run code from the internet!
 
