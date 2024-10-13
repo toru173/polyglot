@@ -12,7 +12,7 @@ SET "TEMP_INSTALL_SCRIPT=%TEMP%\%RANDOM%-%RANDOM%.cmd"
 TIMEOUT /T 0 >NUL 2>NUL
 IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example -o %TEMP_INSTALL_SCRIPT% && START /B /I CMD /D /Q /K %TEMP_INSTALL_SCRIPT% && EXIT /B)
 
-ECHO I'm being executed by cmd.exe!
+ECHO I'm being executed as a batch file!
 GOTO cleanup
 
 :: All done! Let's exit from the Windows part of the script
@@ -38,5 +38,5 @@ END_WIN
 #
 # example -text
 
-echo "I'm being executed by bash!"
+echo "I'm being executed as a shell script!"
 exit 0
