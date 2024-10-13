@@ -7,10 +7,13 @@ Polyglot is a script format that is simultaneously a valid Batch (.BAT, .CMD) fi
 In computing, a polyglot is a program or script that is valid in multiple programming languages. [Wikipedia](https://en.wikipedia.org/wiki/Polyglot_(computing)) has a good introduction to the concept.
 
 ### Running a polygot script in Windows...
-[Running on Windows](!https://www.github.com/toru173/polyglot/images/windows.png)
+![Running on Windows](https://www.github.com/toru173/polyglot/images/windows.png)
+
+### Linux...
+![Running on Linux](https://www.github.com/toru173/polyglot/images/linux.png)
 
 ### And in macOS!
-[Running on macOS](!https://www.github.com/toru173/polyglot/images/macos.png)
+![Running on macOS](https://www.github.com/toru173/polyglot/images/macos.png)
 
 ## How does it work?
 We can combine the two because a line starting with `:; ...(other commands)` is treated as a single line by cmd.exe, but as multiple lines in a shell script. That means we can put in additional commands specific to bash, such as a command that captures all of the contents of the script up to a delimiter keyword - representing the Batch component of the script - and redirecting it to /dev/null. Execution then proceeds as expected in our chosen *nix shell.
@@ -34,7 +37,7 @@ There are some additional issues. Batch files behave very differently when being
 ```
 SET "TEMP_INSTALL_SCRIPT=%TEMP%\%RANDOM%-%RANDOM%.cmd"
 TIMEOUT /T 0 >NUL 2>NUL
-IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example -o %TEMP_INSTALL_SCRIPT% && START /I CMD /D /Q /C %TEMP_INSTALL_SCRIPT% && EXIT /B)
+IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example -o %TEMP_INSTALL_SCRIPT% && START /WAIT /I CMD /D /Q /K %TEMP_INSTALL_SCRIPT% & DEL %TEMP_INSTALL_SCRIPT% && EXIT /B)
 ```
 
 Additionally, batch file labels may not work reliably when [using LF line endings only](https://www.dostips.com/forum/viewtopic.php?t=8988) and [bash doesn't like CRLF line endings](https://unix.stackexchange.com/questions/577663/handling-bash-script-with-crlf-carriage-return-in-linux-as-in-msys2). `adjust_line_endings.py` inserts the correct line endings for each section. The heredoc is also sensitive to this 
@@ -67,9 +70,9 @@ curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/exam
 
 You can quickly copy example code from GitHub by clicking the clipboard icon to the right of the code:
 
-[GitHub Clipboard Icon]()
+![GitHub Clipboard Icon](https://www.github.com/toru173/polyglot/images/clipboard_icon.png)
 
 Please quickly read through the [example script](https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example) before downloading as it's never a good idea to blindly download and run code from the internet!
 
 ## Contributing or Feedback
-If you have questions, comments or feedback, please [open an issue]() to start the conversation!
+If you have questions, comments or feedback, please [open an issue](https://github.com/toru173/polyglot/issues/new/choose) to start the conversation!
