@@ -37,7 +37,7 @@ TIMEOUT /T 0 >NUL 2>NUL
 IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example -o %TEMP_INSTALL_SCRIPT% && START /I CMD /D /Q /C %TEMP_INSTALL_SCRIPT% && EXIT /B)
 ```
 
-Additionally, batch file labels may not work reliably when [using LF line endings only](https://www.dostips.com/forum/viewtopic.php?t=8988) and [bash doesn't like CRLF line endings](https://unix.stackexchange.com/questions/577663/handling-bash-script-with-crlf-carriage-return-in-linux-as-in-msys2). `adjust_line_endings.py` inserts the correct line endings for each section. 
+Additionally, batch file labels may not work reliably when [using LF line endings only](https://www.dostips.com/forum/viewtopic.php?t=8988) and [bash doesn't like CRLF line endings](https://unix.stackexchange.com/questions/577663/handling-bash-script-with-crlf-carriage-return-in-linux-as-in-msys2). `adjust_line_endings.py` inserts the correct line endings for each section. The heredoc is also sensitive to this 
 
 It is critical that Git doesn't try to normallise the line endings of any polyglot script. The script name needs to be added to .gitattributes to disable line ending normalisation:
 
