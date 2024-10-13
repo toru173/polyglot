@@ -13,7 +13,7 @@ In computing, a polyglot is a program or script that is valid in multiple progra
 [Running on macOS](!https://www.github.com/toru173/polyglot/images/macos.png)
 
 ## How does it work?
-We can combine the two because a line starting with `:; ...(other commands)` is treated as a single line by cmd.exe, but as two lines in a shell script. That means we can put in a second command specific to bash, such as a command that captures all of the contents of the script up to a boundary keyword - representing the Batch component of the script - and redirecting it to /dev/null. Execution then proceeds as expected in our chosen *nix shell.
+We can combine the two because a line starting with `:; ...(other commands)` is treated as a single line by cmd.exe, but as multiple lines in a shell script. That means we can put in additional commands specific to bash, such as a command that captures all of the contents of the script up to a delimiter keyword - representing the Batch component of the script - and redirecting it to /dev/null. Execution then proceeds as expected in our chosen *nix shell.
 
 A simple example polyglot is as follows:
 
