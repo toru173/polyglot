@@ -83,8 +83,9 @@ def adjust_line_endings(polyglot_file, delimiter):
                 # the delimiter
                 if delimiter in line:
                     # Check for the initial delimiter defining the heredoc.
-                    # The heredoc is sensitive to line endings so we need to fix it here
-                    file.write(line) #.replace('\r\n', '\n').replace('\r', '\n'))
+                    # The heredoc is sensitive to line endings. Using CRLF seems to be safest
+                    # though some shells might complain?
+                    file.write(line.replace('\n', '\r\n').replace('\r\r\n', '\r\n'))
                     if line.startswith(delimiter):
                         # Once the end of the heredoc is found, switch to LF
                         # Write out the remaining lines in the file with LF only
