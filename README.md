@@ -20,12 +20,12 @@ A simple example polyglot is as follows:
 ```
 :; cat > /dev/null << END_WIN
 :: This is the Windows part of the script
-ECHO I'm being executed by cmd.exe!
+ECHO I'm being executed as a batch file!
 EXIT /B
 END_WIN
 
 # Now we're in the bash (or similar) part of the script.
-echo "I'm being executed by bash!"
+echo "I'm being executed as a shell script!"
 exit 0
 ```
 
