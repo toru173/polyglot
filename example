@@ -20,9 +20,7 @@ GOTO cleanup
 :: Check if the script was  downloaded to temp. It most likely
 :: was as if we piped it from cURL, and if so it won't be
 :: named 'example' - it will be named something random.
-IF NOT "%~nx0" == "example" (
-    DEL "%~f0"
-)
+IF NOT "%~nx0" == "example" (DEL "%~f0" >NUL)
 EXIT /B
 END_WIN
 
