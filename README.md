@@ -45,6 +45,9 @@ It is critical that Git doesn't try to normallise the line endings of any polygl
 example -text
 ```
 
+## Limitations
+Windows will only recognise this file as executable if the extension is `.bat` or `.cmd`. If attempting to distribute the script to users this must be taken into consideration. Linux or macOS don't care about the extension but the file cannot be run directly as there is no [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)). The shell cannot guess what program should be used to run the script; it can still be run directly with `bash example`.
+
 ## Why did you do this?
 I have a project that benefits from having a single script that behaves differently (but correctly) depending on the platform it runs on. I spent far too much time learning about different ways to implement this solution and decided to share my knowledge!
 
