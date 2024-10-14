@@ -49,7 +49,7 @@ example.cmd -text
 ```
 
 ## Compatibility
-Windows will only recognise this file as executable if the extension is `.bat` or `.cmd`, but due to some [ancient voodoo](http://www.faqs.org/faqs/unix-faq/faq/part3/section-16.html) most *nix kernels will likely attempt to execute a text file that is marked as 'executable' by passing it to `sh`. If `sh` has enough functionality for our needs or we are happy to re-launched the script with our preferred shell, we can omit the typical (shebang)[https://en.wikipedia.org/wiki/Shebang_(Unix)] and trust the kernel to continue to behave the way it has for over 45 years.
+Windows will only recognise this file as executable if the extension is `.bat` or `.cmd`, but due to some [ancient voodoo](http://www.faqs.org/faqs/unix-faq/faq/part3/section-16.html) most *nix kernels will likely attempt to execute a text file that is marked as 'executable' by passing it to `sh`. If `sh` has enough functionality for our needs or we are happy to re-launched the script with our preferred shell, we can omit the typical [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) and trust the kernel to continue to behave the way it has for over 45 years.
 
 ## Why did you do this?
 I have a project that benefits from having a single script that behaves differently (but correctly) depending on the platform it runs on. I spent far too much time learning about different ways to implement this solution and decided to share my knowledge!
