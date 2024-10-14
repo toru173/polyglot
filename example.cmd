@@ -10,7 +10,7 @@
 :: when executing from a pipe. Thanks cmd.exe!
 SET "TEMP_INSTALL_SCRIPT=%TEMP%\%RANDOM%-%RANDOM%.cmd"
 TIMEOUT /T 0 >NUL 2>NUL
-IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example.cmd -o %TEMP_INSTALL_SCRIPT% && START /WAIT /I CMD /K %TEMP_INSTALL_SCRIPT% >NUL 2>&1 & DEL %TEMP_INSTALL_SCRIPT% && EXIT /B)
+IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example.cmd -o %TEMP_INSTALL_SCRIPT% && START /WAIT /I CMD /Q /K %TEMP_INSTALL_SCRIPT% >NUL 2>&1 & DEL %TEMP_INSTALL_SCRIPT% && EXIT /B)
 
 ECHO I'm being executed as a batch file!
 

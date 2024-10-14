@@ -37,7 +37,7 @@ Batch files behave very differently when being piped to cmd.exe as opposed to be
 ```
 SET "TEMP_INSTALL_SCRIPT=%TEMP%\%RANDOM%-%RANDOM%.cmd"
 TIMEOUT /T 0 >NUL 2>NUL
-IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example.cmd -o %TEMP_INSTALL_SCRIPT% && START /WAIT /I CMD /K %TEMP_INSTALL_SCRIPT% >NUL 2>&1 & DEL %TEMP_INSTALL_SCRIPT% && EXIT /B)
+IF ERRORLEVEL 1 (curl -sL https://raw.githubusercontent.com/toru173/polyglot/refs/heads/main/example.cmd -o %TEMP_INSTALL_SCRIPT% && START /WAIT /I CMD /Q /K %TEMP_INSTALL_SCRIPT% >NUL 2>&1 & DEL %TEMP_INSTALL_SCRIPT% && EXIT /B)
 ```
 
 Additionally, batch file labels may not work reliably when [using LF line endings only](https://www.dostips.com/forum/viewtopic.php?t=8988) and bash (or sh) [doesn't like CRLF line endings](https://unix.stackexchange.com/questions/577663/handling-bash-script-with-crlf-carriage-return-in-linux-as-in-msys2). `adjust_line_endings.py` inserts the correct line endings for each section. The heredoc is also sensitive to this; the delimiter must include the carriage return in both cases.
@@ -62,7 +62,7 @@ You can quickly copy example code from GitHub by clicking the clipboard icon to 
 
 ![GitHub Clipboard Icon](images/clipboard_icon.png)
 
-Don't try to copy and past the picture though - you won't get very far!
+Don't try to copy and paste the picture though - you won't get very far!
 
 ### Windows
 ```
