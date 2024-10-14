@@ -16,7 +16,7 @@ In computing, a polyglot is a program or script that is valid in multiple progra
 ![Running on macOS](images/macos.png)
 
 ## How does it work?
-We can combine the two because a line starting with `:` is seen as a label in cmd.exe and a no-op (or 'true') in most shells [as explained here](https://unix.stackexchange.com/questions/31673#39678). When executing in a Bourne (or Bourne-alike) shell, a quoted [heredoc](https://en.wikipedia.org/wiki/Here_document) is used to capture the output of the script up to the delimiter and direct it to `:`, effectivly hiding that content. Quoting the heredoc is important to ensure the shell doesn't attempt to [expand](https://en.wikipedia.org/wiki/Here_document#Unix_shells) any of the script contents. When executing in a Windows cmd.exe environment the first line is seen as a possible target for a `goto` statement, though never referenced.
+We can combine the two scripts because a line starting with `:` is seen as a label in cmd.exe and a no-op (or 'true') in most shells [as explained here](https://unix.stackexchange.com/questions/31673#39678). When executing in a Bourne (or Bourne-alike) shell, a quoted [heredoc](https://en.wikipedia.org/wiki/Here_document) is used to capture the output of the script up to the delimiter and direct it to `:`, effectivly hiding that content. Quoting the heredoc is important to ensure the shell doesn't attempt to [expand](https://en.wikipedia.org/wiki/Here_document#Unix_shells) any of the script contents. When executing in a Windows cmd.exe environment the first line is seen as a possible target for a `goto` statement, though never referenced.
 
 A simple example polyglot is as follows:
 
