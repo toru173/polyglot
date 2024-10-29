@@ -38,7 +38,7 @@
 #
 # An example script would be:
 #
-# :; cat > /dev/null << END_WIN
+# : << END_WIN
 # ECHO I'm being executed by cmd.exe!
 # EXIT /B 0
 # END_WIN
