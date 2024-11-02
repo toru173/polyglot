@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='adjust_line_endings.py',
-    version='0.3',
+    version='0.4',
     author='toru173',
     description='A Python module for working with polyglot files',
     long_description=open('README.md').read(),

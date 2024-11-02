@@ -2,5 +2,5 @@
   name: adjust line endings
   description: adjusts line endings in polyglot files such that they have CLRF in the section that has Windows Batch script, and LF elsewhere.
   language: python
-  entry: do-pre-commit
+  entry: polyglot/adjust_line_endings.py --pre-commit
   pass_filenames: false
