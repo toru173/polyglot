@@ -11,7 +11,7 @@ setup(
     packages = ['adjust_line_endings'],
     entry_points = {
         'console_scripts': [
-            'adjust_line_endings = adjust_line_endings.adjust_line_endings.py:main',
+            'adjust_line_endings = adjust_line_endings:main',
         ],
     }
 )
