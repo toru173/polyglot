@@ -171,13 +171,13 @@ def get_files_from_gitattributes():
     return list(files_from_gitattributes)
 
 
-def process_pre_commit(delimiter):
-    files_to_process = get_files_from_gitattributes()
-    if not files_to_process:
+def do_pre_commit(delimiter):
+    files_to_normalise = get_files_from_gitattributes()
+    if not files_to_normalise:
         print("No files with '-text' attribute found.")
         return
 
-    for polyglot_file in files_to_process:
+    for polyglot_file in files_to_normalise:
         adjust_line_endings(polyglot_file, delimiter)
 
 
@@ -195,7 +195,7 @@ def main():
 
     if args.pre_commit:
         # Run in pre-commit mode
-        process_pre_commit(args.delimiter)
+        do_pre_commit(args.delimiter)
     else:
         if args.polyglot_file is None:
             parser.error('polyglot_file is required unless --pre-commit is specified.')
